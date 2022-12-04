@@ -1,0 +1,47 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: crawlerNode
+  cloud:
+    nacos:
+      server-addr:  # nacos服务地址
+      discovery:
+        ip: localhost # 此服务的公网ip
+  boot:
+    admin:
+      client:
+        url: http://121.5.69.88:3795
+
+  redis:
+    # Redis服务器地址
+    host:
+    # Redis服务器端口
+    port: 6379
+    # Redis服务器密码
+    password: root
+    # 选择哪个库，默认0库
+    database: 0
+    # 连接超时时间
+    timeout: 100000ms
+    lettuce:
+      pool:
+        # 最大连接数，默认8
+        max-active: 1024
+        # 最大连接阻塞等待时间，单位毫秒，默认-1ms
+        max-wait: 10000ms
+        # 最大空闲连接，默认8
+        max-idle: 200
+        # 最小空闲连接，默认0
+        min-idle: 5
+
+#监控配置 开启所有监控
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

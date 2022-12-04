@@ -1,0 +1,61 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: crawlerDispatcher
+  cloud:
+    nacos:
+      server-addr:  # nacos服务地址
+      discovery:
+        ip: localhost # 此服务的公网ip
+  boot:
+    admin:
+      client:
+        url:
+  redis:
+    # Redis服务器地址
+    host:
+    # Redis服务器端口
+    port: 6379
+    # Redis服务器密码
+    password: root
+    # 选择哪个库，默认0库
+    database: 0
+    # 连接超时时间
+    timeout: 10000ms
+    lettuce:
+      pool:
+        # 最大连接数，默认8
+        max-active: 1024
+        # 最大连接阻塞等待时间，单位毫秒，默认-1ms
+        max-wait: 100000ms
+        # 最大空闲连接，默认8
+        max-idle: 200
+        # 最小空闲连接，默认0
+        min-idle: 5
+
+feign:
+  client:
+    config:
+      default:
+        logger-level: BASIC  # 日志级别
+        connectTimeout: 200000
+        readTimeout: 200000
+  httpclient:
+    enabled: true
+    max-connections: 200
+    max-connections-per-route: 50
+    connection-timeout: 200000
+
+
+
+#监控配置 开启所有监控
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
