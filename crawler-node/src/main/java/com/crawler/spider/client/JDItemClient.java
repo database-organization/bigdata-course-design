@@ -11,8 +11,8 @@ import org.apache.hadoop.hbase.Cell;
 
 import java.io.IOException;
 
-import static com.crawler.hbase.HBaseDDL.*;
-import static com.crawler.hbase.HBaseDML.*;
+import static com.crawler.spider.entity.hbase.HBaseDDL.*;
+import static com.crawler.spider.entity.hbase.HBaseDML.*;
 
 
 public class JDItemClient {

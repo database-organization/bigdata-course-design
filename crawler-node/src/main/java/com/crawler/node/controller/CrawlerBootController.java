@@ -25,7 +25,7 @@ public class CrawlerBootController {
     @PostMapping("/search")
     @ResponseBody
     public void dispatchSearchTask(@RequestBody String wrapperJson) {
-        //创建爬虫线程并且获取爬取页面（由taskWrapper封装）的各种信息的URI
+        //创建爬虫线程并且获取爬取页面（由taskWrapper封装）的各种信息的URL
         accomplishTask(wrapperJson, (taskWrapper) ->
                 Spider.create(new JDSearchProcessor())
                         .addUrl(taskWrapper.getMetaData())

@@ -41,7 +41,11 @@ public class JDItemProcessor implements PageProcessor {
         if (page.getResultItems().get("skuName") == null) {
             // skip this page
             page.setSkip(true);
-            throw new Exception("获取商品详细信息失败！");
+            try {
+                throw new Exception("获取商品详细信息失败！");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         } else {
             this.skuName = page.getResultItems().get("skuName").toString().trim();
         }
@@ -50,5 +54,13 @@ public class JDItemProcessor implements PageProcessor {
     @Override
     public Site getSite() {
         return site;
+    }
+
+    public String getSkuName() {
+        return skuName;
+    }
+
+    public void setSkuName(String skuName) {
+        this.skuName = skuName;
     }
 }

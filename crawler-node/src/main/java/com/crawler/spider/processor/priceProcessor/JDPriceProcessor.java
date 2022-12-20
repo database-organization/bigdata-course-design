@@ -38,7 +38,8 @@ public class JDPriceProcessor implements PageProcessor {
             throw new Exception("获取商品价格失败！");
         } else {
             String priceJson = page.getResultItems().get("JD_productPrice").toString().trim();
-            List<JDPriceInfo> jdPriceInfos = GsonHolder.G.fromJson(priceJson, new TypeToken<List<JDPriceInfo>>() {}.getType());
+            List<JDPriceInfo> jdPriceInfos = GsonHolder.G.fromJson(priceJson, new TypeToken<List<JDPriceInfo>>() {
+            }.getType());
             priceInfo = jdPriceInfos.get(0);
         }
     }

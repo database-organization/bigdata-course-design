@@ -1,4 +1,4 @@
-package com.crawler.hbase;
+package com.crawler.spider.entity.hbase;
 
 import org.apache.hadoop.hbase.client.Connection;
 
