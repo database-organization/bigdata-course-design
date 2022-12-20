@@ -1,5 +1,7 @@
 --- 部署命令 ---
-nohup java -jar crawler-node.jar \
+nohup
+java - jar
+crawler - node.jar \
 --spring.cloud.nacos.discovery.ip=你的ip \
 --server.port=你的端口 \
 > 你随意.txt &
