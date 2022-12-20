@@ -4,7 +4,6 @@ nohup java -jar crawler-node.jar \
 --server.port=你的端口 \
 > 你随意.txt &
 
-
 --- 实例 ---
 nohup java -jar crawler-node.jar \
 --spring.cloud.nacos.discovery.ip=166.66.66.66 \
